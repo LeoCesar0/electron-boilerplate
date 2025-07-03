@@ -6,22 +6,30 @@
   "scripts": {
     "start": "concurrently -k \"cross-env BROWSER=none npm run start:react\" \"npm run start:electron\"",
     "start:react": "vite",
-    "start:electron": "wait-on tcp:3000 && cross-env NODE_ENV=development electron .",
-    "build": "vite build",
-    "build:prod": "vite build && cross-env NODE_ENV=production electron .",
-    "preview": "vite preview"
+    "start:electron": "tsc -p tsconfig.json && wait-on tcp:3000 && cross-env NODE_ENV=development electron .",
+    "build": "tsc && vite build",
+    "build:electron": "tsc -p tsconfig.json",
+    "build:prod": "npm run build && npm run build:electron && cross-env NODE_ENV=production electron .",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.2.1",
+    "electron-reload": "^2.0.0-alpha.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
+    "@types/electron": "^1.6.10",
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "electron": "^29.1.4",
     "electron-squirrel-startup": "^1.0.1",
+    "typescript": "^5.3.3",
     "vite": "^5.1.6",
     "wait-on": "^7.2.0"
   }
