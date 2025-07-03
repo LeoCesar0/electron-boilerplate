@@ -15,6 +15,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
     "@tailwindcss/vite": "^4.1.11",
     "@vitejs/plugin-react": "^4.2.1",
     "class-variance-authority": "^0.7.1",

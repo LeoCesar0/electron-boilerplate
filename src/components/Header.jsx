@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="header">
-      <div className="container">
+      <div className="container mx-auto">
         <nav>
           <div>
             <Link to="/">Electron React App</Link>
