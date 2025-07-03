@@ -1,0 +1,14 @@
+/node_modules
+node_modules
+/dist
+/build
+/public/vite
+/public/electron
+/public/electron-builder
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.development
+.env.production
